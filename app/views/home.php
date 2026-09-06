@@ -26,7 +26,7 @@ function launch_btn(array $g): array
         <p><?= e($g['short_desc']) ?></p>
         <div class="hero-actions">
           <?php if ($href): ?>
-            <a class="btn btn-primary" href="<?= e($href) ?>" target="<?= e($target) ?>" rel="<?= $target === '_blank' ? 'noopener' : '' ?>">▶ <?= e($label) ?></a>
+            <a class="btn btn-primary" href="<?= e($href) ?>" target="<?= e($target) ?>" rel="<?= $target === '_blank' ? 'noopener' : '' ?>" <?= $target === '_blank' ? 'data-play="' . e(url('play', ['id' => $g['id']])) . '"' : '' ?>>▶ <?= e($label) ?></a>
           <?php else: ?>
             <a class="btn btn-primary" href="<?= e(url('game', ['id' => $g['id']])) ?>">▶ <?= e($label) ?></a>
           <?php endif; ?>
@@ -73,7 +73,7 @@ function launch_btn(array $g): array
         <div class="card-foot">
           <span class="plays">▶ <?= e(number_format($g['play_count'])) ?></span>
           <?php if ($href): ?>
-          <a class="btn btn-play" href="<?= e($href) ?>" target="<?= e($target) ?>" rel="<?= $target === '_blank' ? 'noopener' : '' ?>"><?= e($label) ?></a>
+          <a class="btn btn-play" href="<?= e($href) ?>" target="<?= e($target) ?>" rel="<?= $target === '_blank' ? 'noopener' : '' ?>" <?= $target === '_blank' ? 'data-play="' . e(url('play', ['id' => $g['id']])) . '"' : '' ?>><?= e($label) ?></a>
           <?php else: ?>
           <a class="btn btn-play" href="<?= e(url('game', ['id' => $g['id']])) ?>">去抖音玩</a>
           <?php endif; ?>

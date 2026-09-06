@@ -2,6 +2,23 @@
 (function () {
   'use strict';
 
+  // 是否运行在"添加到主屏幕"的独立 App 里（iOS / Android）
+  function isStandalone() {
+    if (navigator.standalone === true) return true; // iOS Safari
+    return !!(window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+  }
+
+  // 独立 App 内：新窗口直开型游戏改为站内播放页打开（全屏，不弹回 Safari）
+  // 桌面浏览器不受影响，保持新窗口直开
+  document.addEventListener('click', function (ev) {
+    if (!isStandalone()) return;
+    var a = ev.target && ev.target.closest ? ev.target.closest('a[data-play]') : null;
+    if (a) {
+      ev.preventDefault();
+      window.location.href = a.getAttribute('data-play');
+    }
+  });
+
   // 删除等危险操作的二次确认
   document.querySelectorAll('.js-confirm').forEach(function (form) {
     form.addEventListener('submit', function (ev) {

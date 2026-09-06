@@ -25,7 +25,8 @@ $miniappName = config('miniapp_platforms.' . $g['miniapp_platform'], '');
       <?php if ($launch !== ''): ?>
       <a class="btn btn-primary btn-lg" href="<?= e($launch) ?>"
          target="<?= $g['play_mode'] === 'new_tab' ? '_blank' : '_self' ?>"
-         rel="<?= $g['play_mode'] === 'new_tab' ? 'noopener' : '' ?>">▶ 开始游戏</a>
+         rel="<?= $g['play_mode'] === 'new_tab' ? 'noopener' : '' ?>"
+         <?= $g['play_mode'] === 'new_tab' ? 'data-play="' . e(url('play', ['id' => $g['id']])) . '"' : '' ?>>▶ 开始游戏</a>
       <?php if ($g['play_mode'] === 'new_tab'): ?>
       <p class="hint">将在新窗口打开游戏</p>
       <?php endif; ?>
