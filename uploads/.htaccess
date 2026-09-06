@@ -1,0 +1,4 @@
+# uploads 只放静态图片，禁止执行脚本
+<FilesMatch "\.(php|phtml|php\d|asp|aspx|jsp|exe|sh|bat)$">
+  Require all denied
+</FilesMatch>

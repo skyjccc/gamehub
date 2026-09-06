@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <defs>
+    <radialGradient id="felt" cx="50%" cy="38%" r="85%">
+      <stop offset="0%" stop-color="#1d7a4f"/>
+      <stop offset="100%" stop-color="#082b1b"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#felt)"/>
+  <g fill="#ffffff" opacity="0.05" font-family="Georgia, serif" font-size="90">
+    <text x="40" y="130">&#9824;</text><text x="760" y="140">&#9829;</text>
+    <text x="90" y="470">&#9827;</text><text x="790" y="480">&#9830;</text>
+  </g>
+  <ellipse cx="450" cy="300" rx="330" ry="180" fill="none" stroke="#d97706" stroke-width="10" opacity="0.55"/>
+  <g transform="translate(305,120) rotate(-14)">
+    <rect width="120" height="170" rx="12" fill="#fff" stroke="#0b3d27" stroke-width="3"/>
+    <text x="14" y="42" font-family="Georgia, serif" font-size="40" fill="#0f172a">A</text>
+    <text x="30" y="120" font-family="Georgia, serif" font-size="72" fill="#0f172a">&#9824;</text>
+  </g>
+  <g transform="translate(475,120) rotate(14)">
+    <rect width="120" height="170" rx="12" fill="#fff" stroke="#0b3d27" stroke-width="3"/>
+    <text x="14" y="42" font-family="Georgia, serif" font-size="40" fill="#dc2626">K</text>
+    <text x="30" y="120" font-family="Georgia, serif" font-size="72" fill="#dc2626">&#9829;</text>
+  </g>
+  <circle cx="450" cy="415" r="46" fill="url(#gold)" opacity="0.95"/>
+  <circle cx="450" cy="415" r="46" fill="none" stroke="#7c2d12" stroke-width="4" stroke-dasharray="6 5"/>
+  <text x="450" y="428" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="bold" fill="#7c2d12">$</text>
+  <text x="450" y="352" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="58" font-weight="800" fill="url(#gold)">德州扑克</text>
+  <text x="450" y="500" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="24" fill="#a7f3d0" letter-spacing="6">TEXAS HOLD'EM</text>
+</svg>

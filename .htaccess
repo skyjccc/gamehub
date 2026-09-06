@@ -1,0 +1,6 @@
+Options -Indexes
+
+# 禁止直接下载 SQL / 文档
+<FilesMatch "\.(sql|md|log)$">
+  Require all denied
+</FilesMatch>

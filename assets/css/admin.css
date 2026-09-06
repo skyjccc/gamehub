@@ -1,0 +1,115 @@
+/* GameHub 管理端 */
+* { box-sizing: border-box; }
+body.admin {
+  margin: 0; display: flex; min-height: 100vh;
+  font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  background: #f1f5f9; color: #1e293b; line-height: 1.6;
+}
+.side {
+  width: 210px; flex: 0 0 210px; background: #0f172a; color: #cbd5e1;
+  padding: 18px 14px; display: flex; flex-direction: column; gap: 4px;
+}
+.side-logo { font-weight: 800; color: #f1f5f9; font-size: 17px; margin: 4px 8px 18px; }
+.side-logo em { font-style: normal; font-size: 11px; color: #64748b; display: block; }
+.side nav { display: flex; flex-direction: column; gap: 4px; }
+.side nav a {
+  color: #cbd5e1; text-decoration: none; padding: 9px 12px; border-radius: 8px; font-size: 14px;
+}
+.side nav a:hover { background: #1e293b; }
+.side nav a.on { background: #4f46e5; color: #fff; }
+.side nav hr { border: 0; border-top: 1px solid #1e293b; margin: 10px 0; }
+.admin-main { flex: 1; padding: 26px 30px; min-width: 0; }
+
+.page-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.page-head h1 { font-size: 22px; margin: 0; }
+
+.flash { padding: 10px 16px; border-radius: 10px; margin-bottom: 18px; font-size: 14px; }
+.flash-success { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+.flash-error { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+
+/* 统计卡 */
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin-bottom: 24px; }
+.stat { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; }
+.stat b { font-size: 24px; display: block; color: #4f46e5; }
+.stat span { font-size: 12.5px; color: #64748b; }
+
+/* 表格 */
+.tbl { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; font-size: 13.5px; }
+.tbl th, .tbl td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; text-align: left; vertical-align: middle; }
+.tbl thead th { background: #f8fafc; color: #64748b; font-weight: 600; font-size: 12.5px; white-space: nowrap; }
+.tbl tbody tr:hover { background: #f8fafc; }
+.w60 { width: 60px; } .w80 { width: 80px; } .w90 { width: 90px; } .w110 { width: 110px; } .w150 { width: 150px; }
+.empty-td { text-align: center; color: #94a3b8; padding: 30px !important; }
+.g-cell { display: flex; gap: 10px; align-items: center; }
+.g-cover { width: 56px; height: 36px; object-fit: cover; border-radius: 6px; background: #e2e8f0; flex: 0 0 56px; }
+.g-cell a { text-decoration: none; color: #1e293b; }
+.g-cell a:hover { color: #4f46e5; }
+.g-slug { display: block; color: #94a3b8; font-size: 11.5px; }
+.tags-cell { color: #64748b; font-size: 12.5px; }
+.sec-title { font-size: 17px; margin: 30px 0 12px; }
+
+.pill {
+  display: inline-block; padding: 3px 12px; border-radius: 99px; font-size: 12px;
+  border: 0; cursor: pointer; font-family: inherit;
+}
+.pill-on { background: #dcfce7; color: #166534; }
+.pill-off { background: #f1f5f9; color: #64748b; }
+.pill-tab { background: #e0e7ff; color: #4338ca; }
+.pill-iframe { background: #fce7f3; color: #be185d; }
+.pill-dim { background: #fef9c3; color: #a16207; }
+
+.op { color: #4f46e5; text-decoration: none; font-size: 13px; background: none; border: 0; cursor: pointer; padding: 0; font-family: inherit; }
+.op:hover { text-decoration: underline; }
+.op-danger { color: #dc2626; }
+.inline { display: inline; }
+
+/* 表单 */
+.gform fieldset {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 22px; margin: 0 0 18px;
+}
+.gform legend { font-weight: 700; font-size: 14.5px; padding: 0 8px; }
+.gform .row { display: block; margin-bottom: 14px; font-size: 13.5px; color: #475569; }
+.gform input[type="text"], .gform input[type="password"], .gform input[type="number"],
+.gform select, .gform textarea {
+  display: block; width: 100%; margin-top: 6px; padding: 9px 12px;
+  border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; font-family: inherit; background: #fff;
+}
+.gform textarea { resize: vertical; }
+.gform input:focus, .gform select:focus, .gform textarea:focus { outline: none; border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, .12); }
+.gform input[type="file"] { margin-top: 6px; display: block; }
+.gform .checks { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 6px; }
+.gform .checks label, .gform .radio { font-size: 13.5px; color: #334155; display: inline-flex; align-items: center; gap: 6px; }
+.gform .radio { display: flex; margin-bottom: 10px; }
+.preview img { display: block; margin-top: 10px; max-width: 240px; max-height: 140px; border-radius: 8px; border: 1px solid #e2e8f0; }
+.tip { color: #94a3b8; font-size: 12.5px; margin: 8px 0 0; }
+.tip code { background: #eef2ff; color: #4338ca; padding: 1px 6px; border-radius: 5px; }
+.gform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+.gform.narrow { max-width: 460px; }
+.btn {
+  display: inline-block; padding: 8px 20px; border-radius: 8px; font-size: 14px; cursor: pointer;
+  border: 1px solid transparent; text-decoration: none; font-family: inherit;
+}
+.btn-primary { background: #4f46e5; color: #fff; }
+.btn-primary:hover { background: #4338ca; }
+.btn-ghost { background: #fff; border-color: #cbd5e1; color: #475569; }
+.btn-lg { padding: 11px 30px; font-size: 15px; }
+
+/* 登录页 */
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+.login-box {
+  width: 340px; background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 34px;
+}
+.login-box h1 { font-size: 20px; margin: 0 0 4px; text-align: center; }
+.login-box .sub { color: #94a3b8; font-size: 13px; text-align: center; margin: 0 0 20px; }
+.login-box label { display: block; font-size: 13.5px; color: #475569; margin-bottom: 14px; }
+.login-box input {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+  border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px;
+}
+.login-box .btn { width: 100%; padding: 11px; }
+
+@media (max-width: 900px) {
+  .gform-grid { grid-template-columns: 1fr; }
+  body.admin { flex-direction: column; }
+  .side { width: 100%; flex: none; }
+}
