@@ -42,7 +42,7 @@ class Site
             self::notFound();
         }
         Game::logPlay((int)$g['id']);
-        view('play', ['title' => $g['name'], 'g' => $g], '');
+        view('play', ['title' => $g['name'], 'g' => $g, 'entry' => expand_url($g['entry_url'])], '');
     }
 
     /** 启动跳板：记日志后 302 跳到游戏入口（new_tab 模式） */
@@ -53,7 +53,7 @@ class Site
             self::notFound();
         }
         Game::logPlay((int)$g['id']);
-        redirect($g['entry_url']);
+        redirect(expand_url($g['entry_url']));
     }
 
     public static function notFound(): void

@@ -80,6 +80,17 @@ function cover_url(array $g): string
     return $g['cover'] !== '' ? 'uploads/' . $g['cover'] : 'assets/img/cover-default.svg';
 }
 
+/**
+ * 展开入口地址里的 {host} 占位符：替换为当前访问者使用的主机名（IP/域名:端口）。
+ * 用于局域网联机游戏 —— 本机访问解析为 127.0.0.1，手机访问解析为局域网 IP。
+ */
+function expand_url(string $url): string
+{
+    // HTTP_HOST 可能带端口（如 192.168.1.10:8890），只取主机名部分
+    $host = parse_url('http://' . ($_SERVER['HTTP_HOST'] ?: '127.0.0.1'), PHP_URL_HOST) ?: '127.0.0.1';
+    return str_replace('{host}', $host, $url);
+}
+
 function flash(?string $msg = null, string $type = 'success')
 {
     if ($msg === null) {

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#450a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#room)"/>
+  <g transform="translate(300,120)">
+    <rect width="300" height="300" rx="10" fill="#f5e6c8" stroke="#78350f" stroke-width="6"/>
+    <g stroke="#78350f" stroke-width="2">
+      <line x1="0" y1="60" x2="300" y2="60"/><line x1="0" y1="120" x2="300" y2="120"/>
+      <line x1="0" y1="180" x2="300" y2="180"/><line x1="0" y1="240" x2="300" y2="240"/>
+      <line x1="60" y1="0" x2="60" y2="300"/><line x1="120" y1="0" x2="120" y2="300"/>
+      <line x1="180" y1="0" x2="180" y2="300"/><line x1="240" y1="0" x2="240" y2="300"/>
+    </g>
+    <circle cx="90" cy="90" r="20" fill="#111827"/>
+    <circle cx="210" cy="90" r="20" fill="#111827"/>
+    <circle cx="150" cy="210" r="20" fill="#dc2626"/>
+  </g>
+  <g font-family="Microsoft YaHei, sans-serif">
+    <text x="450" y="490" text-anchor="middle" font-size="54" font-weight="800" fill="#fde68a">内网棋牌室</text>
+    <text x="450" y="540" text-anchor="middle" font-size="20" fill="#fecaca" letter-spacing="4">象棋 · 五子棋 · 国际象棋</text>
+  </g>
+</svg>

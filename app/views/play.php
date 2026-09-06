@@ -21,7 +21,7 @@
   <span class="name"><?= e($g['name']) ?></span>
   <button type="button" id="btn-fs">⛶ 全屏</button>
 </div>
-<iframe id="play-frame" src="<?= e($g['entry_url']) ?>" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
+<iframe id="play-frame" src="<?= e($entry) ?>" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
 <script>
 document.getElementById('btn-fs').addEventListener('click', function () {
   var f = document.getElementById('play-frame');

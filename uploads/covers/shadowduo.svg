@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <radialGradient id="lamp1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamp2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="560" fill="url(#night)"/>
+  <circle cx="360" cy="300" r="150" fill="url(#lamp1)"/>
+  <circle cx="540" cy="300" r="150" fill="url(#lamp2)"/>
+  <g font-family="Microsoft YaHei, sans-serif">
+    <rect x="345" y="255" width="30" height="90" rx="10" fill="#111827"/>
+    <rect x="525" y="255" width="30" height="90" rx="10" fill="#111827"/>
+    <text x="450" y="150" text-anchor="middle" font-size="58" font-weight="800" fill="#e2e8f0">双影同行</text>
+    <text x="450" y="200" text-anchor="middle" font-size="20" fill="#64748b" letter-spacing="4">SHADOW DUO</text>
+    <text x="450" y="500" text-anchor="middle" font-size="22" fill="#94a3b8" letter-spacing="6">黑暗中 · 互相照亮</text>
+  </g>
+</svg>

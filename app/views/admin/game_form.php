@@ -53,7 +53,7 @@ $selectedTags = array_map('trim', explode(',', (string)$g['tags']));
         <label class="row">游戏入口地址 entry_url
           <input type="text" name="entry_url" maxlength="500" value="<?= e($g['entry_url']) ?>" placeholder="/poker/ 或 https://你的域名/">
         </label>
-        <p class="tip">站内部署的游戏填相对路径（如 <code>/poker/</code>，指向 WWW 下的目录）；部署在别处的填完整 URL。<b>留空则玩家端不显示“开始游戏”，只显示小程序引导。</b></p>
+        <p class="tip">站内部署的游戏填相对路径（如 <code>/poker/</code>，指向 WWW 下的目录）；部署在别处的填完整 URL，局域网联机游戏用 <code>{host}</code> 占位符（如 <code>http://{host}:8642/</code>，手机访问时自动变成局域网 IP）。<b>留空则玩家端不显示“开始游戏”，只显示小程序引导。</b></p>
       </fieldset>
     </div>
 
