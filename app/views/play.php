@@ -2,11 +2,14 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title><?= e($title) ?> - 正在玩</title>
 <style>
   html,body{margin:0;height:100%;background:#05070d;display:flex;flex-direction:column;overflow:hidden}
-  .play-bar{display:flex;align-items:center;gap:14px;padding:0 14px;height:50px;flex:0 0 50px;
+  .play-bar{display:flex;align-items:center;gap:14px;padding:0 14px;
+    padding-top:env(safe-area-inset-top);flex:0 0 auto;min-height:50px;
     background:#0b0f1a;color:#cbd5e1;border-bottom:1px solid #1e2638}
   .play-bar a{color:#818cf8;text-decoration:none;font-size:14px}
   .play-bar .name{font-weight:700;font-size:15px;color:#f1f5f9;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
